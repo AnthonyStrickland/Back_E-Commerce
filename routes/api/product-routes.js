@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// The `/api/products` endpoint
-
 // GET all products
 router.get('/', async (req, res) => {
   try {
@@ -58,7 +56,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// UPDATE a product by its `id` value
+// UPDATE a product by its ID
 router.put('/:id', (req, res) => {
   Product.update(req.body, {
     where: {
@@ -102,7 +100,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// DELETE one product by its `id` value
+// DELETE one product by its ID
 router.delete('/:id', async (req, res) => {
   try {
     const productData = await Product.destroy({
